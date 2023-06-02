@@ -1,0 +1,590 @@
+# depslib dependency file v1.0
+1618778441 source:c:\users\sonde\skrivebord\gruppe30\elsparkesykkel.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Elsparkesykkel.h"
+	"Gjenstand.h"
+	"LesData3.H"
+
+1618778441 c:\users\sonde\skrivebord\gruppe30\elsparkesykkel.h
+	<iostream>
+	<string>
+	"Gjenstand.h"
+
+1618779599 c:\users\sonde\skrivebord\gruppe30\gjenstand.h
+	<iostream>
+	<string>
+	"enumer.h"
+
+1618778441 c:\users\sonde\skrivebord\gruppe30\enumer.h
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+
+1617725716 c:\users\sonde\skrivebord\gruppe30\lesdata3.h
+
+1622845446 source:c:\users\sonde\skrivebord\gruppe30\gfunc.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Gjenstand.h"
+	"Kunde.h"
+	"gfunc.h"
+	"LesData3.H"
+
+1622845577 c:\users\sonde\skrivebord\gruppe30\kunde.h
+	<iostream>
+	<string>
+	<vector>
+	"Gjenstand.h"
+	"conster.h"
+
+1618759613 c:\users\sonde\skrivebord\gruppe30\gfunc.h
+	<iostream>
+
+1618782747 source:c:\users\sonde\skrivebord\gruppe30\gjenstand.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Gjenstand.h"
+	"LesData3.H"
+	"Elsparkesykkel.h"
+	"enumer.h"
+
+1622897944 source:c:\users\sonde\skrivebord\gruppe30\kunde.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Kunde.h"
+	"Kunder.h"
+	"lesData3.H"
+	"Utleiesteder.h"
+	"Sted.h"
+	"conster.h"
+
+1622831520 c:\users\sonde\skrivebord\gruppe30\kunder.h
+	<string>
+	<list>
+	<iostream>
+	"Kunde.h"
+
+1617725716 source:c:\users\sonde\skrivebord\gruppe30\lesdata3.cpp
+	<iostream>
+	<iomanip>
+	<cctype>
+	<cstdlib>
+	"LesData3.h"
+
+1622845461 source:c:\users\sonde\skrivebord\gruppe30\main.cpp
+	<iostream>
+	"kunder.h"
+	"utleiesteder.h"
+	"gfunc.h"
+	"LesData3.h"
+
+1618762294 c:\users\sonde\skrivebord\gruppe30\utleiesteder.h
+	<iostream>
+	<map>
+	<string>
+	"Sted.h"
+
+1618785754 c:\users\sonde\skrivebord\gruppe30\sted.h
+	<iostream>
+	<vector>
+	<string>
+	"enumer.h"
+	"Tralle.h"
+	"Sykkel.h"
+	"Elsparkesykkel.h"
+
+1618778441 c:\users\sonde\skrivebord\gruppe30\tralle.h
+	<iostream>
+	<string>
+	"Gjenstand.h"
+
+1618778441 c:\users\sonde\skrivebord\gruppe30\sykkel.h
+	<iostream>
+	<string>
+	"Gjenstand.h"
+
+1618790692 source:c:\users\sonde\skrivebord\gruppe30\sted.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Sted.h"
+	"LesData3.h"
+	"Gjenstand.h"
+	<algorithm>
+	"conster.h"
+
+1618778441 source:c:\users\sonde\skrivebord\gruppe30\sykkel.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Sykkel.h"
+	"LesData3.H"
+
+1618778441 source:c:\users\sonde\skrivebord\gruppe30\tralle.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Tralle.h"
+	"Gjenstand.h"
+	"LesData3.H"
+
+1622932029 source:c:\users\sonde\skrivebord\gruppe30\utleiesteder.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	<map>
+	<list>
+	"LesData3.h"
+	"Utleiesteder.h"
+	"conster.h"
+	"Kunde.h"
+	"Kunder.h"
+	"Sted.h"
+
+1618783125 c:\users\sonde\skrivebord\gruppe30\conster.h
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+
+1622834816 source:c:\users\sonde\skrivebord\gruppe30\kunder.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	<list>
+	"Kunder.h"
+	"lesData3.H"
+	"gfunc.h"
+	"Kunde.h"
+	<algorithm>
+	"Utleiesteder.h"
+
+1618778441 source:c:\users\sonde\skrivebord\gruppe30master\elsparkesykkel.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Elsparkesykkel.h"
+	"Gjenstand.h"
+	"LesData3.H"
+
+1618778441 c:\users\sonde\skrivebord\gruppe30master\elsparkesykkel.h
+	<iostream>
+	<string>
+	"Gjenstand.h"
+
+1618779599 c:\users\sonde\skrivebord\gruppe30master\gjenstand.h
+	<iostream>
+	<string>
+	"enumer.h"
+
+1618778441 c:\users\sonde\skrivebord\gruppe30master\enumer.h
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+
+1617725716 c:\users\sonde\skrivebord\gruppe30master\lesdata3.h
+
+1618778441 source:c:\users\sonde\skrivebord\gruppe30master\gfunc.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Gjenstand.h"
+	"Kunde.h"
+	"gfunc.h"
+	"LesData3.H"
+
+1618787289 c:\users\sonde\skrivebord\gruppe30master\kunde.h
+	<iostream>
+	<string>
+	<vector>
+	"Gjenstand.h"
+	"conster.h"
+
+1618783125 c:\users\sonde\skrivebord\gruppe30master\conster.h
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+
+1618759613 c:\users\sonde\skrivebord\gruppe30master\gfunc.h
+	<iostream>
+
+1618782747 source:c:\users\sonde\skrivebord\gruppe30master\gjenstand.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Gjenstand.h"
+	"LesData3.H"
+	"Elsparkesykkel.h"
+	"enumer.h"
+
+1618787391 source:c:\users\sonde\skrivebord\gruppe30master\kunder.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	<list>
+	"Kunder.h"
+	"lesData3.H"
+	"gfunc.h"
+	"Kunde.h"
+	<algorithm>
+	"Utleiesteder.h"
+
+1618786971 c:\users\sonde\skrivebord\gruppe30master\kunder.h
+	<string>
+	<list>
+	<iostream>
+	"Kunde.h"
+
+1618762294 c:\users\sonde\skrivebord\gruppe30master\utleiesteder.h
+	<iostream>
+	<map>
+	<string>
+	"Sted.h"
+
+1618785754 c:\users\sonde\skrivebord\gruppe30master\sted.h
+	<iostream>
+	<vector>
+	<string>
+	"enumer.h"
+	"Tralle.h"
+	"Sykkel.h"
+	"Elsparkesykkel.h"
+
+1618778441 c:\users\sonde\skrivebord\gruppe30master\tralle.h
+	<iostream>
+	<string>
+	"Gjenstand.h"
+
+1618778441 c:\users\sonde\skrivebord\gruppe30master\sykkel.h
+	<iostream>
+	<string>
+	"Gjenstand.h"
+
+1617725716 source:c:\users\sonde\skrivebord\gruppe30master\lesdata3.cpp
+	<iostream>
+	<iomanip>
+	<cctype>
+	<cstdlib>
+	"LesData3.h"
+
+1618678197 source:c:\users\sonde\skrivebord\gruppe30master\main.cpp
+	<iostream>
+	"kunder.h"
+	"utleiesteder.h"
+	"gfunc.h"
+	"LesData3.h"
+
+1618790692 source:c:\users\sonde\skrivebord\gruppe30master\sted.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Sted.h"
+	"LesData3.h"
+	"Gjenstand.h"
+	<algorithm>
+	"conster.h"
+
+1618778441 source:c:\users\sonde\skrivebord\gruppe30master\sykkel.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Sykkel.h"
+	"LesData3.H"
+
+1618778441 source:c:\users\sonde\skrivebord\gruppe30master\tralle.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Tralle.h"
+	"Gjenstand.h"
+	"LesData3.H"
+
+1618778441 source:c:\users\sonde\skrivebord\gruppe30master\utleiesteder.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	<map>
+	<list>
+	"LesData3.h"
+	"Utleiesteder.h"
+	"conster.h"
+	"Kunde.h"
+	"Kunder.h"
+	"Sted.h"
+
+1618778441 source:c:\users\sonde\skrivebord\kajakkprogrammet\elsparkesykkel.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Elsparkesykkel.h"
+	"Gjenstand.h"
+	"LesData3.H"
+
+1618778441 c:\users\sonde\skrivebord\kajakkprogrammet\elsparkesykkel.h
+	<iostream>
+	<string>
+	"Gjenstand.h"
+
+1618779599 c:\users\sonde\skrivebord\kajakkprogrammet\gjenstand.h
+	<iostream>
+	<string>
+	"enumer.h"
+
+1623104168 c:\users\sonde\skrivebord\kajakkprogrammet\enumer.h
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+
+1617725716 c:\users\sonde\skrivebord\kajakkprogrammet\lesdata3.h
+
+1623104303 source:c:\users\sonde\skrivebord\kajakkprogrammet\gjenstand.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Gjenstand.h"
+	"LesData3.H"
+	"Elsparkesykkel.h"
+	"enumer.h"
+
+1622897944 source:c:\users\sonde\skrivebord\kajakkprogrammet\kunde.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Kunde.h"
+	"Kunder.h"
+	"lesData3.H"
+	"Utleiesteder.h"
+	"Sted.h"
+	"conster.h"
+
+1622845577 c:\users\sonde\skrivebord\kajakkprogrammet\kunde.h
+	<iostream>
+	<string>
+	<vector>
+	"Gjenstand.h"
+	"conster.h"
+
+1623104152 c:\users\sonde\skrivebord\kajakkprogrammet\conster.h
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+
+1622831520 c:\users\sonde\skrivebord\kajakkprogrammet\kunder.h
+	<string>
+	<list>
+	<iostream>
+	"Kunde.h"
+
+1618762294 c:\users\sonde\skrivebord\kajakkprogrammet\utleiesteder.h
+	<iostream>
+	<map>
+	<string>
+	"Sted.h"
+
+1618785754 c:\users\sonde\skrivebord\kajakkprogrammet\sted.h
+	<iostream>
+	<vector>
+	<string>
+	"enumer.h"
+	"Tralle.h"
+	"Sykkel.h"
+	"Elsparkesykkel.h"
+
+1618778441 c:\users\sonde\skrivebord\kajakkprogrammet\tralle.h
+	<iostream>
+	<string>
+	"Gjenstand.h"
+
+1618778441 c:\users\sonde\skrivebord\kajakkprogrammet\sykkel.h
+	<iostream>
+	<string>
+	"Gjenstand.h"
+
+1622932221 source:c:\users\sonde\skrivebord\kajakkprogrammet\kunder.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	<list>
+	"Kunder.h"
+	"lesData3.H"
+	"gfunc.h"
+	"Kunde.h"
+	<algorithm>
+	"Utleiesteder.h"
+
+1618759613 c:\users\sonde\skrivebord\kajakkprogrammet\gfunc.h
+	<iostream>
+
+1617725716 source:c:\users\sonde\skrivebord\kajakkprogrammet\lesdata3.cpp
+	<iostream>
+	<iomanip>
+	<cctype>
+	<cstdlib>
+	"LesData3.h"
+
+1622845461 source:c:\users\sonde\skrivebord\kajakkprogrammet\main.cpp
+	<iostream>
+	"kunder.h"
+	"utleiesteder.h"
+	"gfunc.h"
+	"LesData3.h"
+
+1618790692 source:c:\users\sonde\skrivebord\kajakkprogrammet\sted.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Sted.h"
+	"LesData3.h"
+	"Gjenstand.h"
+	<algorithm>
+	"conster.h"
+
+1618778441 source:c:\users\sonde\skrivebord\kajakkprogrammet\sykkel.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Sykkel.h"
+	"LesData3.H"
+
+1623103544 source:c:\users\sonde\skrivebord\kajakkprogrammet\tralle.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Kajakk.h"
+	"Gjenstand.h"
+	"LesData3.H"
+
+1622932029 source:c:\users\sonde\skrivebord\kajakkprogrammet\utleiesteder.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	<map>
+	<list>
+	"LesData3.h"
+	"Utleiesteder.h"
+	"conster.h"
+	"Kunde.h"
+	"Kunder.h"
+	"Sted.h"
+
+1623103044 source:c:\users\sonde\skrivebord\kajakkprogrammet\gfunc.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Gjenstand.h"
+	"Kunde.h"
+	"gfunc.h"
+	"LesData3.H"
+
+1623105172 c:\users\sonde\skrivebord\kajakkprogrammet\kajakk.h
+	<iostream>
+	<string>
+	"Gjenstand.h"
+
+1623104035 source:c:\users\sonde\skrivebord\kajakkprogrammet\annet.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Annet.h"
+	"Gjenstand.h"
+	"LesData3.H"
+
+1623105153 c:\users\sonde\skrivebord\kajakkprogrammet\annet.h
+	<iostream>
+	<string>
+	"Gjenstand.h"
+
+1623103905 source:c:\users\sonde\skrivebord\kajakkprogrammet\kajakk.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Kajakk.h"
+	"Gjenstand.h"
+	"LesData3.H"
+
+1623103968 source:c:\users\sonde\skrivebord\kajakkprogrammet\kano.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Kano.h"
+	"LesData3.H"
+
+1623105194 c:\users\sonde\skrivebord\kajakkprogrammet\kano.h
+	<iostream>
+	<string>
+	"Gjenstand.h"
+

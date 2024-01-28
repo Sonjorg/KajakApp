@@ -1,0 +1,105 @@
+# depslib dependency file v1.0
+1623104035 source:c:\users\sonde\skrivebord\kajakkprogrammet\annet.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Annet.h"
+	"Gjenstand.h"
+	"LesData3.H"
+
+1623110364 c:\users\sonde\skrivebord\kajakkprogrammet\annet.h
+	<iostream>
+	<string>
+	"Gjenstand.h"
+
+1618779599 c:\users\sonde\skrivebord\kajakkprogrammet\gjenstand.h
+	<iostream>
+	<string>
+	"enumer.h"
+
+1623104168 c:\users\sonde\skrivebord\kajakkprogrammet\enumer.h
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+
+1617725716 c:\users\sonde\skrivebord\kajakkprogrammet\lesdata3.h
+
+1623103044 source:c:\users\sonde\skrivebord\kajakkprogrammet\gfunc.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Gjenstand.h"
+	"Kunde.h"
+	"gfunc.h"
+	"LesData3.H"
+
+1622845577 c:\users\sonde\skrivebord\kajakkprogrammet\kunde.h
+	<iostream>
+	<string>
+	<vector>
+	"Gjenstand.h"
+	"conster.h"
+
+1623104152 c:\users\sonde\skrivebord\kajakkprogrammet\conster.h
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+
+1618759613 c:\users\sonde\skrivebord\kajakkprogrammet\gfunc.h
+	<iostream>
+
+1623103905 source:c:\users\sonde\skrivebord\kajakkprogrammet\kajakk.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Kajakk.h"
+	"Gjenstand.h"
+	"LesData3.H"
+
+1623105172 c:\users\sonde\skrivebord\kajakkprogrammet\kajakk.h
+	<iostream>
+	<string>
+	"Gjenstand.h"
+
+1623103968 source:c:\users\sonde\skrivebord\kajakkprogrammet\kano.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Kano.h"
+	"LesData3.H"
+
+1623110346 c:\users\sonde\skrivebord\kajakkprogrammet\kano.h
+	<iostream>
+	<string>
+	"Gjenstand.h"
+
+1617725716 source:c:\users\sonde\skrivebord\kajakkprogrammet\lesdata3.cpp
+	<iostream>
+	<iomanip>
+	<cctype>
+	<cstdlib>
+	"LesData3.h"
+
+1623108256 source:c:\users\sonde\skrivebord\kajakkprogrammet\gjenstand.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<vector>
+	<fstream>
+	"Gjenstand.h"
+	"LesData3.H"
+	"Annet.h"
+	"enumer.h"
+

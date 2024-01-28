@@ -1,0 +1,30 @@
+Mangler for lærers sjekkliste:
+11. lagt info om gruppedeltagerne (navn, mail, mobil) inn i README-filen på GitLab
+
+Gjort:
+- Lagt til mest nødvendige filer, obligatorisk data i klassefilene, kopiert over data i lesData3 .h og .cpp.
+- Sendt ssh og https link i blackboard innlevering for prosjekt. 
+
+Å gjøre videre:
+- Globale funksjoner
+- Lage klasser
+- Headinger
+- Main
+- Testing
+
+29.3 
+sondre: jeg tenker å jobbe litt med kundeklassen og dennes skriv til fil.
+- Skal lage en funksjon i gfunc som bruker både "kunde" og "gjenstand" sin les til fil.(ikke ferdig med denne)
+- Starter på en gFunc som heter nyKunde.
+
+31.3 
+Abdulhadi: Jobber med Sted klasse og skriv til fil
+- Progresjon skjer under "Sted" branch i GitLab
+
+03.4
+Abdulhadi: Nesten ferdig med Sted klasse, Trenger gjenstand laget ferdig, men alt som bruker den er ferdiglaget og kommentert ut
+
+03.04
+Sondre: Skal jobbe med kundebase::handling og det jeg rekker, laster opp det som kompilerer til branch.
+7.4 Sondre: brukte litt tid på å finne ut av finnKunde, men den er ferdig. Erstattet map med list i kundeListe i klassen Kunder, 
+og laget Kunde::Skrivdata (denne mangler informasjon om kundes gjenstander) og Kunder::skrivData1().

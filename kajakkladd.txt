@@ -1,0 +1,41 @@
+void Kunder::padletur() {
+	int mNr;
+	char k;
+	string navn;
+	cout << "Du har valgt aa starte en padletur.\n\n";
+	k = lesChar("Trykk 'A' for aa taste inn ditt medlemsnummer, 'B' for ditt brukernavn, 'C' for aa gaa tilbake");
+	switch (k) {
+	case 'A': mNr = lesInt("medlemsnummer:", 0, kundeListe.size()); 
+				finnKunde(mNr)->startPadletur();					break;
+	case 'B': do { cout << "Brukernavn: "; getline(cin, navn); cout << "Du tastet inn '" << navn << "' Er dette riktig? ('J'a/'N'ei)"; } while (lesChar("") == 'N');
+		do {
+			if (finnKunde3(navn)) {
+				finnKunde2(navn)->startPadletur();
+			}	else funnet = true; ny = lesChar("\nFant dessverre ikke dette medlemmet. Husk aa skille mellom stor og smaa bokstav, vil du soke igjen? (J)a/(N)ei");			break;
+			
+		return false;
+	} while (funnet == false && ny == 'J');
+	case 'C': break;
+	default: cout << "Trykk 'A' for å taste inn ditt brukernavn, 'B' for ditt medlemsnummer, 'C' for aa gaa tilbake";
+	}
+	
+
+"             (\                        "
+"               \_O                     "
+"           _____\/)_____               "
+"~~~~~~~~~~~~`----\----'~~~~~~~~~~~~~~  "
+"~~~~~~ ~~~~ ~~~~  \ ~~~~~~ ~~~   ~~~~~~"
+
+Start en padletur\n"
+Registrer/avslutt padletur\n"
+Registrer nytt medlem\n"
+Finn medlemsnummeret ditt\n"
+Skriv ut alle medlemmene\n"
+Skriv alt om ett medlem <kundenr>((1) er et ett - tall.)\n"
+Hent en kajakk/Kano med <medlemsnummer>\n"
+Lever alle gjenstand(er) fra <medlemsnummer>\n"
+Slett et medlem <medlemsnummer>\n"
+Finn et savnet medlem på sjøen\n"
+Ny Gjenstand\n"
+Finn Gjenstand <gjenstandnr>\n"
+Slett Gjenstand <gjenstandnr>\n"

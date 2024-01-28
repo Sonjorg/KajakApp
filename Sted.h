@@ -2,23 +2,20 @@
 #define __STED_H
 
 #include <iostream>
-//#include <functional>
 #include <vector>
 #include <string>
 #include "enumer.h"
-#include "KAJAKK.H"
-#include "KANO.H"
-#include "ANNET.H"
-#include "Gjenstand.h"
+#include "Kajakk.h"
+#include "Kano.h"
+#include "Annet.h"
 
 class Sted {
 private:
 	std::string IDsted, beskrivelse;
 	int telefonnummer, inntjente;
-	//std::vector <Gjenstand*> gjenstander;
 	std::vector <Kajakk*> kajakker;
-	std::vector <Kano*> kanoer;
-	std::vector <Annet*> andre;
+	std::vector <Kano*>   kanoer;
+	std::vector <Annet*> annet;
 
 
 public:
@@ -41,7 +38,7 @@ public:
 	Kano* taKano();									// Kopierer og popper en Kano fra vector
 	Annet* taAnnet();					// Kopierer og popper en elsparkeKano fra vector
 	int antKajakker();									// Henter størrelse av Kajakkvector
-	int antKanoer();									// Henter størrelse av Kanovector
+	int antSykler();									// Henter størrelse av Kanovector
 	int antAnnet();							// Henter størrelse av ElsparkeKanovector
 	bool finnGjenstand(int gjenstandNr);                // returner true om gjenstand er funnet eller false
 	void slettKajakk(int gjenstandNr);                  // sletter 1 Kajakk av gitt gjNr

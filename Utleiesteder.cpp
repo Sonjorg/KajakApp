@@ -11,7 +11,6 @@
 #include "Kunde.h"
 #include "Kunder.h"
 #include "Sted.h"
-#include "enumer.h"
 using namespace std;
 
 // Global variabel definert i MAIN.CPP
@@ -237,9 +236,9 @@ void Utleiesteder::slettSted() {
 
 							// Henter størrelse av eksisterende gjenstand vectorer fra
 							// sted som skal slettes
-							int antKajakkr = it->second->antKajakker();
-							int antSykler = it->second->antKanoer();
-							int antElsparkesykler = it->second->antAnnet();
+							int antKajakkr = it->second->antKajakkr();
+							int antSykler = it->second->antSykler();
+							int antElsparkesykler = it->second->antElsparkesykler();
 
 							// Flytter Kajakkr
 							for (int i = 0; i < antKajakkr; i++) {						// Flytter så mange elementer som ønsket
@@ -251,7 +250,7 @@ void Utleiesteder::slettSted() {
 							}
 							// Flytter elsparkesykler
 							for (int i = 0; i < antElsparkesykler; i++) {
-								it2->second->settInnAnnet(it->second->taAnnet());
+								it2->second->settInnElsparkeKano(it->second->taElsparkeKano());
 							}
 
 							cout << "\n\nGjenstander flyttet til: " << it2->first;
@@ -344,14 +343,14 @@ void Utleiesteder::skrivGjenstandAntall() const {
 	if (!Steder.empty()) { // sjekker om det finnes steder først
 		cout << "\n Kajakk(0), Kano(1), ElsparkeKano(2)";
 		switch (lesInt("\nTast inn type gjenstand", 0, 2)) { // Leser gjenstandsvalg og setter ønsket enum verdi
-		case 0:	type = kajakk;			break;
-		case 1:	type = kano;			break;
-		case 2:	type = annet;	break;
+		case 0:	type = Kajakk;			break;
+		case 1:	type = Kano;			break;
+		case 2:	type = elsparkeKano;	break;
 		default:						break;
 		}
 
 		// Sikrer at bruker velger en type gjenstand
-		if (type == kajakk || type == kano || type == annet) {
+		if (type == Kajakk || type == Kano || type == elsparkeKano) {
 			for (auto const& it : Steder)	// Går gjennom alle steder
 			{
 				it.second->skrivGjenstand(type); // Sted skriver sin egen data
@@ -375,7 +374,7 @@ void Utleiesteder::nyGjenstand()
 {
 	Kajakk* nyKajakk = nullptr;
 	Kano* nyKano = nullptr;
-	Annet* nyAnnet = nullptr;
+	ElsparkeKano* nyEl = nullptr;
 	char type, valg;
 	string stedNavn;
 	int antall, watt;
@@ -426,8 +425,8 @@ void Utleiesteder::nyGjenstand()
 				break;
 				case 'E':
 				{
-					nyAnnet = new Annet(sisteNr++, type, watt);
-					it->second->settInnAnnet(nyAnnet);
+					nyEl = new ElsparkeKano(sisteNr++, type, watt);
+					it->second->settInnElsparkeKano(nyEl);
 					cout << "\tNy elsparkeKano legges inn med nr." << sisteNr - 1 << endl;
 				}
 				break;
@@ -576,9 +575,9 @@ void Utleiesteder::flyttGjenstand() {
 		// Spør om ønsket gjenstandstype for å flytte
 		cout << "\n Kajakk(0), Kano(1), ElsparkeKano(2)";
 		switch (lesInt("\nTast inn type gjenstand", 0, 2)) { // Leser gjenstandsvalg og setter ønsket enum verdi
-			case 0:	type = kajakk;			break;
-			case 1:	type = kano;			break;
-			case 2:	type = annet;	break;
+			case 0:	type = Kajakk;			break;
+			case 1:	type = Kano;			break;
+			case 2:	type = elsparkeKano;	break;
 			default:						break;
 		}
 
@@ -597,14 +596,14 @@ void Utleiesteder::flyttGjenstand() {
 			// Skriver antall gjenstander for ønsket navn som referanse
 			tilSted->skrivGenerellData();
 
-			if (type == kajakk) {
+			if (type == Kajakk) {
 				// Henter størrelse av eksisterende Kajakk vector for feilbehandlig
-				int antKajakker = fraSted->antKajakker();
+				int antKajakkr = fraSted->antKajakkr();
 
 				// Passer på at kopiert vector ikke er tom
 				// og eventuelt at ønsket antall gjenstander er mindre eller lik
 				// antall gjenstander i vectoren
-				if (antKajakker > 0 && antKajakker >= antall) {
+				if (antKajakkr > 0 && antKajakkr >= antall) {
 					for (int i = 0; i < antall; i++) {						// Flytter så mange elementer som ønsket
 						tilSted->settInnKajakk(fraSted->taKajakk());	//  Kopierer pekeren til nytt sted
 					}
@@ -613,9 +612,9 @@ void Utleiesteder::flyttGjenstand() {
 					cout << "\n\nIkke nok gjenstander å flytte!";
 				}
 			}
-			else if(type == kano) {
+			else if(type == Kano) {
 				// Henter størrelse av eksisterende Kano vector for feilbehandlig
-				int antSykler = fraSted->antKanoer();
+				int antSykler = fraSted->antSykler();
 
 				// Passer på at kopiert vector ikke er tom
 				// og eventuelt at ønsket antall gjenstander er mindre eller lik
@@ -631,14 +630,14 @@ void Utleiesteder::flyttGjenstand() {
 			}
 			else {
 				// Henter størrelse av eksisterende elsparkeKano vector for feilbehandlig
-				int antAnnet = fraSted->antAnnet();
+				int antElsparkesykler = fraSted->antElsparkesykler();
 
 				// Passer på at kopiert vector ikke er tom
 				// og eventuelt at ønsket antall gjenstander er mindre eller lik
 				// antall gjenstander i vectoren
-				if (antAnnet > 0 && antAnnet >= antall) {
+				if (antElsparkesykler > 0 && antElsparkesykler >= antall) {
 					for (int i = 0; i < antall; i++) {						// Flytter så mange elementer som ønsket
-						tilSted->settInnAnnet(fraSted->taAnnet());	//  Kopierer pekeren til nytt sted
+						tilSted->settInnElsparkeKano(fraSted->taElsparkeKano());	//  Kopierer pekeren til nytt sted
 					}
 				}
 				else {

@@ -1,0 +1,5 @@
+﻿  Kunde.cpp
+C:\Users\sonde\Skrivebord\Kajakkprogrammet\Kunde.cpp(63,85): warning C4305: 'argument': truncation from 'double' to 'const float'
+C:\Users\sonde\Skrivebord\Kajakkprogrammet\Kunde.cpp(71,127): warning C4305: 'argument': truncation from 'double' to 'const float'
+C:\Users\sonde\Skrivebord\Kajakkprogrammet\Kunde.cpp(226,9): warning C4101: 'gjNr': unreferenced local variable
+  nordkajakkV.vcxproj -> C:\Users\sonde\Skrivebord\Kajakkprogrammet\nordkajakkV\Debug\nordkajakkV.exe

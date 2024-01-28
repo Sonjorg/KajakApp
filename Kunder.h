@@ -11,14 +11,8 @@ protected:
 	int sisteNr;
 	std::list <Kunde*> kundeListe;
 public:
-    
-    void padletur();
     void nyKunde();                     // oppretter kunde og legger i listen
-    void avsluttPadletur();
-    void finnPadler();
     void handling(char valg);           // valg for kundebase
-    bool finnKunde3(std::string n);
-    Kunde* finnKunde2(std::string n);
     Kunde* finnKunde(const int nr);     // returnerer peker til kunde
     void leverGjenstander();            // lever gjenstander fra kunde til valgt sted
 	void finnGjenstand(int nr);         // finner hvilken kunde gjenstanden ligger hos

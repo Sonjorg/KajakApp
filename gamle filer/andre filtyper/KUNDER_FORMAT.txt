@@ -1,0 +1,31 @@
+Formatering:
+
+ID <int>
+navn <string>
+mobilnummer <int>
+	<For hver gjenstand>
+	Tralle <char> gjNr <int> draSele <int>
+	Sykkel <char> gjNr <int> tilhenger <int>
+	Elspykkel <char> gjNr <int> antallWatt <int>
+_ <Slutt av gjenstandlesing>
+
+
+Eksempel:
+
+0
+Jakob
+82938936
+	T 23 0
+	T 24 1
+_
+1
+Markus
+29338484
+	S 25 0
+	E 26 600
+_
+2
+Helene
+82728394
+	S 27 0
+_

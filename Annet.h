@@ -6,7 +6,7 @@
 #include "Gjenstand.h"
 
 //Elsparkesykkel er subklasse av Gjenstand
-class Annet : public Gjenstand {
+class Annet :public Gjenstand {
 private:
 	int antallWatt;
     int ID;

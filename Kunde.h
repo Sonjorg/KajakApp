@@ -4,24 +4,18 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <list> 
 #include "Gjenstand.h"
 #include "conster.h"
-#include "Padletur.h"
 
 class Kunde {
 protected:
     int IDnummer, mobilNummer;
     std::string navn;
     std::vector <Gjenstand*> gjenstander;
-    std::list <Padletur*> padleTurer;
-    float antKm;
+    int antKm;
 
 public:
-    void startPadletur();
-    void avsluttPadletur();
     void salg(int pris);                        //For å regne ut steds inntjente kroner
-    void visTur();
     Kunde(int nr, std::string nvn);
 	Kunde(int ID, std::string nvn, int tlf);		   // Constructor for lesing fra fil
 	int faktura();

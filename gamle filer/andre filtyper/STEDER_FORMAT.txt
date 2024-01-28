@@ -1,0 +1,39 @@
+Formatering:
+
+ID <string> 
+beskrivelse <string>
+telefonnummer <int>	inntjente <int>
+	<For hver gjenstand>
+	Tralle <char> gjNr <int> draSele <int>
+	Sykkel <char> gjNr <int> tilhenger <int>
+	Elspykkel <char> gjNr <int> antallWatt <int>
+_ <Slutt av gjenstandlesing>
+
+
+Eksempel:
+
+Sykkelparken
+Utleiested for sykler, elsparkesykler og traller.
+82938299	2500
+	T 0 0
+	T 1 1
+	T 2 0
+	S 3 1
+	E 4 200
+	E 5 450
+_
+Tomt lager
+Tomt lager for sykler
+29382718	0
+_
+Sentrum
+Utleiested for sykler og elsparkesykler.
+82738283	10000
+	S 6 0
+	S 7 1
+	S 8 1
+	E 9 200
+	E 10 450
+	E 11 450
+	E 12 600
+_

@@ -18,23 +18,15 @@ using namespace std;
 */
 void skrivMeny()
 {
-cout<<
-"             (\\                                     (\\                                     (\\                        \n"<<
-"               \\_O                                    \\_O                                    \\_O                     \n"<<
-"           _____\\/)_____                          _____\\/)_____                          _____\\/)_____               \n"<<
-"~~~~~~~~~~~~`----\\----'~~~~~~~~~~~~~~  ~~~~~~~~~~~~`----\\----'~~~~~~~~~~~~~~  ~~~~~~~~~~~~`----\\----'~~~~~~~~~~~~~~  \n"<<
-"~~~~~~ ~~~~ ~~~~  \\ ~~~~~~ ~~~   ~~~~~~~~~~~~ ~~~~ ~~~~  \\ ~~~~~~ ~~~   ~~~~~~~~~~~~ ~~~~ ~~~~  \\ ~~~~~~ ~~~   ~~~~~~\n\n"
-        << "Folgende kommandoer er tilgjengelig:\n"
-        << "\tM 1        - Start en padletur\n"
-        << "\tM 2        - Registrer/avslutt padletur\n"
-        << "\tM 3        - Registrer nytt medlem\n"
-        << "\tM 4        - Finn medlemsnummeret ditt\n"
-        << "\tM 5        - SKRIV  UT ALLE medlemmene\n"
-        << "\tM 6 <knr>  - Skriv alt om ett medlem <kundenr>((1) er et ett - tall.)\n"
-        << "\tM 7 <knr>  - Hent en kajakk/Kano med <medlemsnummer>\n"
-        << "\tM 8 <knr>  - Lever alle gjenstand(er) fra <medlemsnummer>\n"
-        << "\tM 9 <knr>  - Slett et medlem <medlemsnummer>\n"
-        << "\tM 10       - Finn et savnet medlem\n"
+    cout << "\nFølgende kommandoer er tilgjengelig:\n"
+        << "\tM S        - Start en padletur\n"
+        << "\tM N        - Registrer nytt medlem\n"
+        << "\tM F        - Finn medlemsnummer til et medlem\n"
+        << "\tM A        - SKRIV  UT ALLE medlemmene\n"
+        << "\tM 1 <knr>  - Skriv alt om ett medlem <kundenr>((1) er et ett - tall.)\n"
+        << "\tM H <knr>  - Hent en kajakk/Kano med <medlemsnummer>\n"
+        << "\tM L <knr>  - Lever alle gjenstand(er) fra <medlemsnummer>\n"
+        << "\tM S <knr>  - Slett et medlem <medlemsnummer>\n"
         << "\tS N        - Nytt Sted\n"
         << "\tS A        - Skriv ut Alle Stedene\n"
         << "\tS 1 <ID>   - Skriv alt om et sted <stedsID>((1) er et ett-tall.)\n"

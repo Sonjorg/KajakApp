@@ -8,7 +8,7 @@
 #include <fstream>                //  FOR Å KUNNE BRUKE:  STLs  vector
 
 
-enum gjenstandType { kajakk, kano, annet };//gjenstand type
+enum gjenstandType { Kajakk, Kano, Annet };//gjenstand type
 
 
 

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="nordkajakk" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Prosjektooprog" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Prosjektooprog" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="Annet.cpp" />
+		<Unit filename="Annet.h" />
+		<Unit filename="Gjenstand.cpp" />
+		<Unit filename="Gjenstand.h" />
+		<Unit filename="Kajakk.cpp" />
+		<Unit filename="Kajakk.h" />
+		<Unit filename="Kano.cpp" />
+		<Unit filename="Kano.h" />
+		<Unit filename="Kunde.cpp" />
+		<Unit filename="Kunde.h" />
+		<Unit filename="Kunder.cpp" />
+		<Unit filename="Kunder.h" />
+		<Unit filename="LesData3.H" />
+		<Unit filename="LesData3.cpp" />
+		<Unit filename="Main.cpp" />
+		<Unit filename="Sted.cpp" />
+		<Unit filename="Utleiesteder.cpp" />
+		<Unit filename="Utleiesteder.h" />
+		<Unit filename="conster.h" />
+		<Unit filename="enumer.h" />
+		<Unit filename="gfunc.cpp" />
+		<Unit filename="gfunc.h" />
+		<Unit filename="nordkajakk.cbp" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

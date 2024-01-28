@@ -22,111 +22,19 @@ extern Utleiesteder gStedbase;
 **/
 void Kunder::handling(char valg){
 	if (valg == 'M') {
-		switch (lesInt("Tast inn funksjonsvalg for 'medlem'", 1, 15)) {		// Leser funksjonsvalg i rute 'kunde'
-		case 1:	  padletur(); 		break;    //oppretter en ny kunde
-		case 2:	avsluttPadletur();	break;
-		case 3:	 nyKunde();			break;
-		case 4:	 dataOmAlle();      break;    //skriver alle kundene ut
-		case 5:	SkrivData1();       break;    //skriver alt om en gitt kunde ut
-		case 6:	 finnKundeNr();  	break;    //henter gjenstander til kunder
-		case 7:  hentGjenstand();   break;    //leverer gjenstander til steder
-		case 8:	leverGjenstander(); break;    //sletter en kunde
-		case 9:	slettKunde();		break;
-		case 10: finnPadler();		break;
+		switch (lesChar("Tast inn funksjonsvalg for '(K)unde'")) {		// Leser funksjonsvalg i rute 'kunde'
+		case 'N':	  nyKunde(); 		break;    //oppretter en ny kunde
+		case 'A':	 dataOmAlle();      break;    //skriver alle kundene ut
+		case '1':	SkrivData1();       break;    //skriver alt om en gitt kunde ut
+		case 'H':	hentGjenstand();	break;    //henter gjenstander til kunder
+		case 'L':   leverGjenstander(); break;    //leverer gjenstander til steder
+		case 'S':	slettKunde();		break;    //sletter en kunde
+		case 'F':   finnKundeNr();      break;
 
 		default:	skrivMeny();		break;
 		}
 	}
 
-}
-
-void Kunder::padletur() {
-	int mNr;
-	char k;
-	string navn;
-	cout << "Du har valgt aa starte en padletur.\n\n";
-	k = lesChar("Trykk 'A' for aa taste inn ditt medlemsnummer, 'B' for ditt brukernavn, 'C' for aa gaa tilbake");
-	switch (k) {
-	case 'A': mNr = lesInt("medlemsnummer:", 0, kundeListe.size()); 
-				finnKunde(mNr)->startPadletur();					break;
-	case 'B': do {
-				do { cout << "Brukernavn: "; getline(cin, navn); cout << "Du tastet inn '" << navn << "' Er dette riktig? ('J'a/'N'ei)"; 
-				   } while (lesChar("") == 'N');
-					if (!finnKunde3(navn)) { cout << "Fant ikke medlem med dette brukernavn/navn. "; }
-				} while (!finnKunde3(navn) && lesChar("Soke igjen? 'J'a/'N'ei") == 'J');
-			finnKunde2(navn)->startPadletur(); break;
-	case 'C': break;
-	default: cout << "Trykk 'A' for å taste inn ditt brukernavn, 'B' for ditt medlemsnummer, 'C' for aa gaa tilbake";
-	}
-	
-} 
-void Kunder::finnPadler() {
-	int mNr;
-	char k;
-	string navn;
-	k = lesChar("Trykk 'A' for aa taste inn padlerens medlemsnummer, 'B' for han/hennes brukernavn, 'C' for aa gaa tilbake");
-	switch (k) {
-	case 'A': mNr = lesInt("medlemsnummer:", 0, kundeListe.size()); finnKunde(mNr)->visTur();	break;
-	case 'B': do {
-					do {
-						cout << "Brukernavn: "; getline(cin, navn); cout << "Du tastet inn '" << navn << "' Er dette riktig? ('J'a/'N'ei)";
-					} while (lesChar("") == 'N');
-					if (!finnKunde3(navn)) { cout << "Fant ikke medlem med dette brukernavn/navn. "; }
-			  } while (!finnKunde3(navn) && lesChar("Soke igjen? 'J'a/'N'ei") == 'J');
-			  finnKunde2(navn)->visTur();				break;
-	case 'C': break;
-	default: cout << "Trykk 'A' for aa taste inn padlerens medlemsnummer, 'B' for han/hennes brukernavn, 'C' for aa gaa tilbake";
-	}
-
-
-}
-void Kunder::avsluttPadletur() {
-	int mNr;
-	char k;
-	string navn;
-	cout << "\nRegistrer/avslutt padletur: \n";
-	k = lesChar("Trykk 'A' for aa taste inn ditt medlemsnummer, 'B' for ditt brukernavn, 'C' for aa gaa tilbake");
-	switch (k) {
-	case 'A': mNr = lesInt("medlemsnummer:", 0, kundeListe.size());
-		finnKunde(mNr)->avsluttPadletur();					break;
-	case 'B': do {
-		do {
-			cout << "Brukernavn: "; getline(cin, navn); cout << "Du tastet inn '" << navn << "' Er dette riktig? ('J'a/'N'ei)";
-		} while (lesChar("") == 'N');
-		if (!finnKunde3(navn)) { cout << "Fant ikke medlem med dette brukernavn/navn. "; }
-	} while (!finnKunde3(navn) && lesChar("Soke igjen? 'J'a/'N'ei") == 'J');
-	finnKunde2(navn)->avsluttPadletur(); break;
-	case 'C': break;
-	default: cout << "Trykk 'A' for å taste inn ditt brukernavn, 'B' for ditt medlemsnummer, 'C' for aa gaa tilbake";
-	}
-	
-
-}
-
-bool Kunder::finnKunde3(string n) {
-
-		auto it2 = find_if(kundeListe.begin(), kundeListe.end(),
-			[n](const auto& val) { return(val->hentNvn() == n); });
-		if (it2 != kundeListe.end()) {
-			return true;
-		}
-		else {
-			return false;
-		}
-}
-
-Kunde* Kunder::finnKunde2(string n) {
-bool funnet = false;
-char ny;
-do {
-	auto it2 = find_if(kundeListe.begin(), kundeListe.end(),
-		[n](const auto& val) { return(val->hentNvn() == n); });
-	if (it2 != kundeListe.end()) {
-		funnet = true;
-		return *it2;                //  Retunerer peker til 'kunde'.
-	}
-	else funnet = false;  ny = lesChar("\nFant ikke dette medlemmet. Husk aa skille mellom stor og smaa bokstav, vil du soke igjen? (J)a/(N)ei");
-} while (funnet == false && ny == 'J');
 }
 
 void Kunder::finnKundeNr() {
@@ -190,7 +98,7 @@ void Kunder::nyKunde() {
 	bool eksisterer = false;
 	char ny;
 
-	ID = lesInt("Nytt medlems medlemsnummer: ", 0, 999999999999);     // Den nye kundens ID nummer blir en høyere enn den forrige
+	ID = sisteNr;     // Den nye kundens ID nummer blir en høyere enn den forrige
 	sisteNr++;
 	cout << "\n\tKundens IDnummer er " << ID;
     do {
@@ -340,14 +248,14 @@ void Kunder::hentGjenstand() {
 
 				cout << "\n Kajakk(0), Kano(1), Annet(2)";
 				switch (lesInt("\nTast inn type gjenstand for innhenting", 0, 2)) { // Leser gjenstandsvalg og setter ønsket enum verdi
-				case 0:	type = kajakk;			break;
-				case 1:	type = kano;			break;
-				case 2:	type = annet;	        break;
+				case 0:	type = Kajakk;			break;
+				case 1:	type = Kano;			break;
+				case 2:	type = Annet;	        break;
 				default:						break;
 				}
 
 				// Les inn antall gjenstander ønsket for flytting
-				int antall = lesInt("\nTast inn antall som skal hentes", 1, 1000);
+				int antall = lesInt("\nTast inn antall som skall flyttes", 1, 1000);
 
 				// Henter en liten vector inneholdene ønskede gjenstander fra sted
 				vector <Gjenstand*> gjenstandKopi = gStedbase.hentGjenstandTilKunde(navn, type, antall);
@@ -361,7 +269,7 @@ void Kunder::hentGjenstand() {
 						kunde->settInnGjenstand(gj);				// Pusher inn gjenstand
 					}
 
-					cout << "\nGjenstander er nå hos medlem!";
+					cout << "\nGjenstander er nå hos kunde!";
 				}
 			//}
 			//else {

@@ -37,44 +37,6 @@ Kunde::Kunde(int ID, string nvn, int tlf) {
 	mobilNummer = tlf;
 }
 
-void Kunde::visTur() {
-    if (!padleTurer.empty()) {
-        cout << "\n\nPadlerens siste padletur er/var: ";
-        padleTurer.back()->skrivData();
-        if (padleTurer.size() > 1) {
-            cout << "\n\nAlle de " << padleTurer.size() << " siste turene til padleren var: \n\n";
-            for (auto val : padleTurer) { val->skrivData(); cout << "\n\n"; }
-        }
-    } else { cout << "\nDette medlemmet har for tiden ingen registrerte padleturer!\n\n"; }
-}
-
-void Kunde::startPadletur() {
-    Padletur* tur;
-    tur = new Padletur;
-    padleTurer.push_back(tur);
-    if (padleTurer.size() > 5) { 
-        delete padleTurer.front(); padleTurer.pop_front(); 
-    }
-}
-
-void Kunde::avsluttPadletur() {
-    float km = 0;
-    char valg;
-    km = lesFloat("\n\nHvor mange kilometer padlet du paa din siste tur?", 0.1, 9999);
-    antKm += km; cout << "\nLagt til " << km << " km, din totale distanse i aar er " << antKm << "\n\n";
-    delete padleTurer.back(); padleTurer.pop_back();
-    if (!padleTurer.empty()) {
-        cout<<"\n\nDu har en eller flere (max 5) uregistrerte/ikke-avsluttede padleturer, onsker du aa registrere kilometer paa disse naa?\n";
-            valg = lesChar("'J'a / 'N'ei ?");
-            while (!padleTurer.empty() && valg == 'J') {
-                km = 0; cout << "\nPadletur: \n";
-                padleTurer.back()->skrivData(); km = lesFloat("\n\nHvor mange kilometer padlet du paa denne turen?", 0.1, 9999);
-                    antKm += km; delete padleTurer.back(); padleTurer.pop_back();
-                   cout<<"Lagt til "<<km<<" km, din totale distanse i aar er "<<antKm<<"\n\n";
-            }
-    }
-}
-
 /**
 *   setter ID nummer til kunder
 */
@@ -162,7 +124,7 @@ int Kunde::faktura() {
         switch (val->hentType()) {
             case 't': Kajakk++; totalPris += prisKajakk;   break;
             case 's': Kano++; totalPris += prisKano;   break;
-            case 'e': el++;     totalPris += prisAnnet;       break;
+            case 'e': el++;     totalPris += prisEl;       break;
         }
     }
     cout <<"\nFaktura: \n\n\t\tKr "<<grunnPris<<" i grunnpris når kunden forlater parken. ";
@@ -171,7 +133,7 @@ int Kunde::faktura() {
     if (Kano > 0) {
         cout << Kano<<" sykler, Kr: "<<prisKano<<",- per stykk\n\t"; }
     if (el > 0) {
-        cout << el<<" annet, Kr: "<<prisAnnet<<",- per stykk\n\t"; }
+        cout << el<<" annet, Kr: "<<prisEl<<",- per stykk\n\t"; }
         cout << "\nTotalt kr: "<<totalPris<<",- aa betale\n";
     return totalPris;       // Sender fortjenesten til sted;
 }
@@ -224,9 +186,9 @@ void Kunde::leverAlleGjenstander() {
     Sted* s;
     Sted* s2;
     int gjNr;
-   // bool kKlubben;
-    Kajakk* kajakkPeker;
-    Kano* kanoPeker;
+    bool kKlubben;
+    Kajakk* KajakkPeker;
+    Kano* KanoPeker;
     Annet* annet;
 
     // Spør bruker hvilket sted kunden befinner seg på
@@ -253,9 +215,9 @@ void Kunde::leverAlleGjenstander() {
     cout <<"kunden har "<< gjenstander.size() <<" Gjenstander:\n\n";
     for (const auto & val : gjenstander) {
 
-        if ( val->hentType() == 't' ) { kajakkPeker = dynamic_cast <Kajakk*> (val); s->settInnKajakk(kajakkPeker); }
-        else if ( val->hentType() == 's' ) { kanoPeker = dynamic_cast <Kano*> (val); s->settInnKano(kanoPeker); }
-        else { annet = dynamic_cast <Annet*> (val); s->settInnAnnet(annet); }
+        if ( val->hentType() == 't' ) { KajakkPeker = dynamic_cast <Kajakk*> (val); s->settInnKajakk(kajakkPeker); }
+        else if ( val->hentType() == 's' ) { KanoPeker = dynamic_cast <Kano*> (val); s->settInnKano(kanoPeker); }
+        else { annet = dynamic_cast <Annet*> (val); s->settInnAnnet(elPeker); }
     }
     s2->fortjeneste(faktura());          //Sender fortjenesten til stedet og skriver ut faktura
     gjenstander.clear();
@@ -301,7 +263,7 @@ int Kunde::lesFraFil(ifstream &inn) {
 		{
 			inn >> intBuffer; gjID = intBuffer;		 // leser inn gjenstandsID
 			inn >> intBuffer; watt = intBuffer;		 // leser inn tilbehør/spec
-			gjenstander.push_back(new Annet(gjID, charBuffer, watt)); // Setter inn elsparkeKano
+			gjenstander.push_back(new ElsparkeKano(gjID, charBuffer, watt)); // Setter inn elsparkeKano
 		}
 		break;
 
@@ -349,8 +311,8 @@ void Kunde::skrivTilFil(ofstream &ut) {					// Skriver til fil:
 			ut << "\n";
 		}
 		else if (type == 'e') {
-			Annet* annetPeker = dynamic_cast <Annet*> (*it);
-			ut << "\t" << "E " << annetPeker->hentID() << " " << annetPeker->hentWatt() << "\n";
+			ElsparkeKano* elspykkelPeker = dynamic_cast <ElsparkeKano*> (*it);
+			ut << "\t" << "E " << elspykkelPeker->hentID() << " " << elspykkelPeker->hentWatt() << "\n";
 		}
 
 	}

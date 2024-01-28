@@ -69,9 +69,9 @@ void Sted::skrivGenerellData() const {
 		<< "Telefonnummer: " << telefonnummer << "\n\t"
 		<< "Inntjent: " << inntjente << "\n\t"
 		<< "Antall Gjenstander:" << "\n\t\t"
-		<< "Kajakkr: " << kajakker.size() << "\n\t\t"
-		<< "Kanoer: " << kanoer.size() << "\n\t\t"
-		<< "Annet: " << andre.size() << "\n";
+		<< "Kajakkr: " << Kajakkr.size() << "\n\t\t"
+		<< "Kanoer: " << Kanoer.size() << "\n\t\t"
+		<< "Annet: " << Annet.size() << "\n";
 }
 
 /**
@@ -90,20 +90,20 @@ void Sted::skrivData() {
 		<< "Antall Gjenstander:" << "\n\t\t";
 	// Itererer gjennom hvert gjenstandsklasse og skriver ut unikt nummer for
 	// lagret gjenstand i dette stedet på hver sin linje.
-	cout << "Kajakkr: " << kajakker.size() << "\n\t\t";
-	for (int i = 0; i < kajakker.size(); i++) {
-        if (finnGjenstand(kajakker[i]->hentID())) {
-            cout << kajakker[i]->hentID() << "\n\t\t"; }  else { cout<<""; }
+	cout << "Kajakkr: " << Kajakkr.size() << "\n\t\t";
+	for (int i = 0; i < Kajakkr.size(); i++) {
+        if (finnGjenstand(Kajakkr[i]->hentID())) {
+            cout << Kajakkr[i]->hentID() << "\n\t\t"; }  else { cout<<""; }
 	}
-	cout << "Kanoer: " << kanoer.size() << "\n\t\t";
-	for (int i = 0; i < kanoer.size(); i++) {
-        if (finnGjenstand(kanoer[i]->hentID())) {
-            cout << kanoer[i]->hentID() << "\n\t\t"; }  else { cout<<""; }
+	cout << "Kanoer: " << Kanoer.size() << "\n\t\t";
+	for (int i = 0; i < Kanoer.size(); i++) {
+        if (finnGjenstand(Kanoer[i]->hentID())) {
+            cout << Kanoer[i]->hentID() << "\n\t\t"; }  else { cout<<""; }
 	}
-	cout << "Annet: " << andre.size() << "\n\t\t";
-	for (int i = 0; i < andre.size(); i++) {
-	    if (finnGjenstand(andre[i]->hentID())) {
-            cout << andre[i]->hentID() << "\n\t\t"; }  else { cout<<""; }
+	cout << "Annet: " << Annet.size() << "\n\t\t";
+	for (int i = 0; i < Annet.size(); i++) {
+	    if (finnGjenstand(Annet[i]->hentID())) {
+            cout << Annet[i]->hentID() << "\n\t\t"; }  else { cout<<""; }
 	}
 }
 
@@ -131,26 +131,26 @@ void Sted::fortjeneste(int penger) {
  **/
 void Sted::skrivGjenstand(gjenstandType type) const {
 	switch (type) { // sjekker ønsket gjenstandstype
-	case kajakk:
-		if (!kajakker.empty()) { // Kajakkvector har gjenstander
+	case Kajakk:
+		if (!Kajakkr.empty()) { // Kajakkvector har gjenstander
 			// Skriver ut antall og info
-			cout << "\nNavn: " << IDsted << "\tTelefonnummer: " << telefonnummer << "\tAntall Kajakkr: " << kajakker.size();
+			cout << "\nNavn: " << IDsted << "\tTelefonnummer: " << telefonnummer << "\tAntall Kajakkr: " << Kajakkr.size();
 		}
 		break;
-	case kano:
-		if (!kanoer.empty()) { // Kanovector har gjenstander
+	case Kano:
+		if (!Kanoer.empty()) { // Kanovector har gjenstander
 			// Skriver ut antall og info
-			cout << "\nNavn: " << IDsted << "\tTelefonnummer: " << telefonnummer << "\tAntall Kanoer: " << kanoer.size();
+			cout << "\nNavn: " << IDsted << "\tTelefonnummer: " << telefonnummer << "\tAntall Kanoer: " << Kanoer.size();
 		}
 		break;
-	case annet:
-		if (!andre.empty()) { // ElsparkeKanovector har gjenstander
+	case elsparkeKano:
+		if (!Annet.empty()) { // ElsparkeKanovector har gjenstander
 			// Skriver ut antall og info
-			cout << "\nNavn: " << IDsted << "\tTelefonnummer: " << telefonnummer << "\tAntall Annet: " << andre.size();
+			cout << "\nNavn: " << IDsted << "\tTelefonnummer: " << telefonnummer << "\tAntall Annet: " << Annet.size();
 		}
 		break;
 	default:
-		break; 
+		break;
 	}
 }
 
@@ -178,21 +178,21 @@ int Sted::lesFraFil(ifstream &inn) {
 		{
 			inn >> intBuffer; gjID = intBuffer;		 // leser inn gjenstandsID
 			inn >> intBuffer; dSele = intBuffer;	 // leser inn tilbehør/spec
-			kajakker.push_back(new Kajakk(gjID, charBuffer, dSele));	// Setter inn Kajakk
+			Kajakkr.push_back(new Kajakk(gjID, charBuffer, dSele));	// Setter inn Kajakk
 		}
 		break;
 		case 'S':
 		{
 			inn >> intBuffer; gjID = intBuffer;		 // leser inn gjenstandsID
 			inn >> intBuffer; tilhenger = intBuffer; // leser inn tilbehør/spec
-			kanoer.push_back(new Kano(gjID, charBuffer, tilhenger));	// Setter inn Kano
+			Kanoer.push_back(new Kano(gjID, charBuffer, tilhenger));	// Setter inn Kano
 		}
 		break;
 		case 'E':
 		{
 			inn >> intBuffer; gjID = intBuffer;		 // leser inn gjenstandsID
 			inn >> intBuffer; watt = intBuffer;		 // leser inn tilbehør/spec
-			andre.push_back(new Annet(gjID, charBuffer, watt)); // Setter inn elsparkeKano
+			Annet.push_back(new ElsparkeKano(gjID, charBuffer, watt)); // Setter inn elsparkeKano
 		}
 		break;
 
@@ -232,7 +232,7 @@ void Sted::skrivTilFil(ofstream &ut) {					// Skriver til fil:
 		else { ut << 0; }
 		ut << "\n";
 	}
-	for (auto it = andre.begin(); it != andre.end(); it++) {
+	for (auto it = annet.begin(); it != annet.end(); it++) {
 		ut << "\t" << "E " << (*it)->hentID() << " " << (*it)->hentWatt() << "\n";
 	}
 	ut << "_";
@@ -260,7 +260,7 @@ void Sted::settInnKano(Kano* sykl) {
  *
  **/
 void Sted::settInnAnnet(Annet* els) {
-	andre.push_back(els);
+	annet.push_back(els);
 }
 
 /**
@@ -294,8 +294,8 @@ Kano* Sted::taKano() {
  * @return Kopien av ElsparkeKano objekt
  **/
 Annet* Sted::taAnnet() {
-	Annet* kopi = andre.back();	// Kopier bakerste elsparkeKano
-	andre.pop_back();						// Fjern bakerste elsparkeKano
+	Annet* kopi = annet.back();	// Kopier bakerste elsparkeKano
+	annet.pop_back();						// Fjern bakerste elsparkeKano
 	return kopi;									// Send tilbake kopi
 }
 
@@ -305,7 +305,7 @@ Annet* Sted::taAnnet() {
  * @return int med størrelseverdi for Kajakkr
  **/
 int Sted::antKajakker() {
-	return kajakker.size();
+	return Kajakker.size();
 }
 
 /**
@@ -323,7 +323,7 @@ int Sted::antKanoer() {
  * @return int med størrelseverdi for Annet
  **/
 int Sted::antAnnet() {
-	return andre.size();
+	return annet.size();
 }
 /**
  *  sletter en bestemt Kajakk
@@ -372,12 +372,12 @@ void Sted::slettKano(int gjenstandNr) {
  *  @param  gjenstandNr
  **/
 void Sted::slettAnnet(int gjenstandNr) {
-    if (!andre.empty()) {
-        for (auto it = andre.begin(); it != andre.end(); it++) {
+    if (!Annet.empty()) {
+        for (auto it = annet.begin(); it != annet.end(); it++) {
             if ((*it)->hentID() == gjenstandNr) { //hvis matches return true eller false
                 delete *it;  // sletter gjenstanden og dens plass i vektoren
                 *it = nullptr;
-                it = andre.erase(it);
+                it = annet.erase(it);
                 break;
             }
         }
@@ -406,7 +406,7 @@ bool Sted::finnGjenstand(int gjenstandNr)
 		}
 	}
 
-	for (auto it = andre.begin(); it != andre.end(); it++) {
+	for (auto it = annet.begin(); it != annet.end(); it++) {
 		if ((*it)->hentID() == gjenstandNr) { //hvis matches return true eller false
 			return true;  // gjenstand er funnet
 		}
@@ -430,7 +430,7 @@ bool Sted::finnGjenstand(int gjenstandNr)
 vector <Gjenstand*> Sted::leiGjenstand(gjenstandType typ, int ant) {
 	vector <Gjenstand*> kopi;
 
-	if (typ == kajakk) {
+	if (typ == Kajakk) {
 		// Henter størrelse av eksisterende Kajakk vector for feilbehandlig
 		int antallKajakker = antKajakker();
 
@@ -446,7 +446,7 @@ vector <Gjenstand*> Sted::leiGjenstand(gjenstandType typ, int ant) {
 			cout << "\n\nIkke nok gjenstander å leie!";
 		}
 	}
-	else if (typ == kano) {
+	else if (typ == Kano) {
 		// Henter størrelse av eksisterende Kano vector for feilbehandlig
 		int antallKanoer = antKanoer();
 

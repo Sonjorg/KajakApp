@@ -8,7 +8,7 @@
 
 
 //Sykkel er subklasse av Gjenstand
-class Kano :public Gjenstand {
+class Kano : public Gjenstand {
 private:
 	bool tilhenger;
 public:

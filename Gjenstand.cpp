@@ -5,7 +5,7 @@
 #include <fstream>                //  FOR Å KUNNE BRUKE:  STLs  vector
 #include "Gjenstand.h"
 #include "LesData3.H"
-#include "Annet.h"
+#include "Elsparkesykkel.h"
 #include "enumer.h"
 
 using namespace std;
@@ -25,8 +25,8 @@ void Gjenstand::skrivData() {
 *
 */
 char Gjenstand::hentType() {
-    if (type == kajakk) { return 't';}
-    else if (type == kano) { return 's';}
+    if (type == Kajakk) { return 't';}
+    else if (type == Kano) { return 's';}
     else { return 'e';}
 }
 
@@ -51,9 +51,9 @@ int Gjenstand::hentID() const
 Gjenstand::Gjenstand(const int nr, char valg)
 {
 	switch (valg) { //  Konverterer bokstav til enum
-	case 'T': type = kajakk;			break;
-	case 'S': type = kano;			    break;
-	case 'E': type = annet;	            break;
+	case 'T': type = Kajakk;			break;
+	case 'S': type = Kano;			    break;
+	case 'E': type = Annet;	            break;
 	}
 
 	gjenstandsNummer = nr;

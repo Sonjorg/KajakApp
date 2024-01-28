@@ -27,7 +27,7 @@ int main()  {
   gStedbase.lesFraFil();
 
   skrivMeny();
-  valg = lesChar("\nKommando");
+  valg = lesChar("\nKommando (A for alternativer)");
 
   while (valg != 'Q')  {
     switch(valg)  {
@@ -36,7 +36,7 @@ int main()  {
                  gStedbase.handling(valg);   break;
       default:   skrivMeny();                break;
     }
-    valg = lesChar("\nKommando (A for alternativer)");
+    valg = lesChar("\nKommando");
   }
 
   gKundebase.skrivTilFil();

@@ -1,1 +1,1 @@
-![alt text](https://github.com/Sonjorg/KajakApp/kajakappimage.png)
+![Alt text](https://github.com/Sonjorg/KajakApp/kajakappimage.png)
